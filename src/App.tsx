@@ -12,6 +12,11 @@ function App() {
     tele.ready();
   }, []);
 
+  const calNumber = () => {
+    tele.MainButton.text = `Total ${count}`;
+    tele.MainButton.show();
+  };
+
   return (
     <>
       <div>
@@ -24,6 +29,12 @@ function App() {
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
+      </div>
+      <div className="card">
+        <button onClick={calNumber}>Check</button>
+      </div>
+      <div className="card">
+        <button onClick={() => tele.MainButton.hide()}>Cancel</button>
       </div>
     </>
   );
